@@ -1,0 +1,21 @@
+auth:
+  adminPassword: %s
+  adminUser: admin
+clusterDomain: cluster.local
+extraEnvVars: 
+  - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
+    value: "true"
+  - name: KEYCLOAK_FRONTEND_URL
+    value: "%s"
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: vault-issuer
+  enabled: true
+  hostname: %s
+  ingressClassName: 'nginx'
+  path: /
+  tls: true
+  existingSecret: keycloak-tls
+service:
+  type: LoadBalancer
+
