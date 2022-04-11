@@ -41,7 +41,7 @@ resource "rancher2_app_v2" "keycloak" {
   namespace  = var.keycloak_namespace
   values     = format(file("${path.module}/etc/keycloak.yaml"),
                    var.admin_password,
-                   "https://${var.keycloak_host}",
+                   "https://${var.keycloak_host}/auth",
                    var.keycloak_host)
 }
 
