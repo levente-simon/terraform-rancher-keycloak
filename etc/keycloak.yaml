@@ -2,11 +2,11 @@ auth:
   adminPassword: %s
   adminUser: admin
 clusterDomain: cluster.local
-extraEnvVars: 
-  - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
-    value: "true"
-  - name: KEYCLOAK_FRONTEND_URL
-    value: "%s"
+# extraEnvVars: 
+#  - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
+#    value: "true"
+#  - name: KEYCLOAK_FRONTEND_URL
+#    value: "_s"
 ingress:
   annotations:
     cert-manager.io/cluster-issuer: vault-issuer
